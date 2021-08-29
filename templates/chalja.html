@@ -1,0 +1,349 @@
+<html>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ipl-favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>INDIAN PREMIER LEAGUE</title>
+<style>
+    *{
+margin:0;
+padding:0;
+font-family:"Roboo",sans-serif;
+}
+
+.container{
+width:100%;
+height:100vh;
+background-position:center;
+background-size:cover;
+padding-left:8%;
+padding-right:8%;
+box-sizing:border-box;
+background-image: url("../static/trophy.jpg");
+}
+.card:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+.card3:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+
+.card1:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+.card2:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+.card4:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+.card5:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+
+.card6:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+.card7:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  
+}
+.col{
+flex-basis:55%;
+
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.navbar{
+height:12%;
+display:flex;
+align-items:center;
+}
+.card{
+    border-radius:10px;
+width:105px;
+height:200px;
+display: inline-block;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/kxip.png") ;
+background-position:center;
+background-size:cover;
+}
+
+.card1{
+width:105px;
+height:200px;
+display: inline-block;
+border-radius:10px;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 10px;
+background-image:url("../static/dc.png") ;
+background-position:center;
+background-size:cover;
+}
+.card2{
+width:105px;
+height:200px;
+display: inline-block;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/kkr.jpg") ;
+background-position:center;
+background-size:cover;
+border-radius:10px;
+}
+.card3{
+width:105px;
+height:200px;
+display: inline-block;
+border-radius:10px;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/csk.png") ;
+background-position:center;
+background-size:cover;
+}
+.card4{
+width:102px;
+height:230px;
+display: inline-block;
+border-radius:10px;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/rcb.png") ;
+background-position:center;
+background-size:cover;
+}
+.card5{
+width:100px;
+height:230px;
+display: inline-block;
+border-radius:10px;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/rr.png") ;
+background-position:center;
+background-size:cover;
+}
+.card6{
+width:100px;
+height:230px;
+display: inline-block;
+border-radius:10px;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/srh.png") ;
+background-position:center;
+background-size:cover;
+}
+
+.card7{
+width:100px;
+height:230px;
+display: inline-block;
+border-radius:10px;
+padding:15px 25px;
+box-sizing: border-box;
+cursor:pointer;
+margin:10px 15px;
+background-image:url("../static/mi.jpg") ;
+background-position:center;
+background-size:cover;
+}
+
+h1{
+color:black;
+font-size:50px;
+text-align:left;
+}
+mark{
+color: white;
+}
+p{
+color:#fff;
+font-size:11px;
+line-height:15px;
+}
+
+.col1{
+flex-basis:61%;
+}
+.navbar{
+height:12%;
+display:flex;
+align-items:center;
+}
+.logo{
+    margin:0px;
+  width:90px;
+  height: 40px;
+  border-radius: 50%;
+}
+.menu-icon{
+width:30px;
+cursor:pointer;
+margin-left:40px;
+}
+nav{
+flex:1;
+text-align:right;
+}
+nav ul li{
+list-style:one;
+display:inline-block;
+margin-left:60px;
+font-weight: bold;
+}
+nav ul li a{
+text-decoration:none;
+color:#fff;
+font-size:17px;
+
+font-weight: bold;
+}
+.row{
+display:flex;
+height:90%;
+align-items:center;
+
+}
+.button{
+
+	background-color:darkred;
+	border-radius: 15px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:20px 15px;
+	margin-top: 10px;
+	text-decoration:none;
+	transition: 0.5s ease-out;
+
+
+}
+
+.button:hover{
+	background-color: #E9E9E9;
+	color: #000000;
+	box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+mark{
+    background-color:black;
+    color: white;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav>
+            <ul>
+            <li><a href=""><mark>HOME</mark></a></li>
+            </ul>
+            </nav>
+            <img src="../static/home .png" class="menu-icon">
+            
+            </div>
+
+            <div class="row">
+
+                <div class="col1">
+                    
+                        <br>
+                        <br>
+                        <br>
+                        <br><br><br><br><br><br><br>
+                        <br>
+                        <br>
+                <h1><mark>What Do You Want To Predict?</mark></h1><br>
+                <a class="button"  href="{{ url_for('diabetesPage') }}">Match Winner</a>
+                <a class="button"  href="{{ url_for('dia') }}">Toss Winner</a>
+                
+                </div>
+                <br>
+                <br>
+                <div class="col">
+                <div class="card">
+                  
+                </div>
+                <div class="card1">
+                
+                </div>
+                <div class="card2">
+                 
+                </div>
+                <div class="card3">
+                  
+                </div>
+                <div class="card4">
+                  
+                </div>
+                <div class="card5">
+                
+                </div>
+                <div class="card6">
+                 
+                </div>
+                
+                <div class="card7">
+                  
+                </div>
+                
+                </div>
+                </div>
+
+
+    </div>
+</body>
+
+</html>
