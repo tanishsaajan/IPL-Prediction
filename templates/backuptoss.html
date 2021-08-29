@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>TOSS WINNER PREDICTOR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+.prediction-area{
+  display: flex;
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  padding-top: 0px;
+  padding-bottom: 150px;
+  text-align: center;
+  background-image: url(../static/captain2.jpg);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.div2, .results{
+	display: inline-block;
+	width: auto;
+	height: 500px;
+	text-align:right;
+  padding-left: 90px;
+  font-size: large;
+  
+}
+.form-input{
+	background-color: #E9E9E9;
+	width: 370px;
+	height: 30px;
+	border-radius: 3px;
+	border: 0;
+	text-align: left;
+	-webkit-box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+	box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+	margin-bottom: 15px;
+}
+.myButton {
+	background-color:white;
+	border-radius: 5px;
+	display:inline-block;
+	cursor:pointer;
+	color:purple;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 26px;
+	margin-top: 10px;
+	text-decoration:none;
+	transition: 0.5s ease-out;
+}
+
+.myButton:hover{
+	background-color: #E9E9E9;
+	color: #000000;
+	box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.oj{
+	background-color:hsl(0, 0%, 90%);
+	height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+
+	font-size: 30px;
+
+}
+.oi{
+  height: 95px;
+  width: 100px;
+  border-radius: 100px;
+  text-align: center;
+  margin:2px;
+  line-height: 145px;
+
+}
+.fa-facebook{
+color:#43609C;
+}
+.fa-instagram{
+  color:#e84393;
+}
+.fa-youtube{
+  color:#e84118;
+}
+.fa-linkedin{
+  color:#0097e6;
+}
+.fa-twitter{
+  color:#6CADDE;
+}
+.pp{
+height: max-content;
+background: linear-gradient(45deg, #443B96, #f6900b, #3ac9f4);
+	background-size: 500% 500%;
+	animation: change-gradient 10s ease-in-out infinite;
+}
+
+.pp:hover .pp-inner {
+  transform: rotateY(180deg);
+}
+
+.title{
+  text-align: center;
+  padding-top: 0%;
+}
+.p{
+  color: black;
+}
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 10px 0;
+
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="{{ url_for('tt') }}" class="w3-bar-item w3-button w3-padding-large">TOSS WINNER</a>
+    <a href="{{ url_for('mm') }}" class="w3-bar-item w3-button w3-padding-large">MATCH WINNER</a>
+    
+    <div class="w3-dropdown-hover w3-hide-small">
+       
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<br>
+<br>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+<!-- Page content -->
+
+
+  <!-- The Tour Section -->
+    
+         <div class="pp">
+          <section class="w3-row-padding w3-center w3-light-grey">
+            <article class="w3-third">
+              <p><b>David Warner</b></p>
+              <img src="../static/warner.jpg" alt="Random Name" style="width:100%">
+              
+              <p class="w3-opacity"><b>Toss Win Percentage</b></p>
+            <p>68.75%</p>
+            </article>
+            <article class="w3-third">
+              <p><b>Shreyas Iyer</b></p>
+              <img src="../static/iyer.jpg" alt="Random Name" style="width:100%">
+              <p class="w3-opacity"><b>Toss Win Percentage</b></p>
+            <p>58.82%</p>
+            </article>
+            <article class="w3-third">
+              <p><b>MS Dhoni</b></p>
+              <img src="../static/ms.jpeg" alt="Random Name" style="width:102%">
+              <p class="w3-opacity"><b>Toss Win Percentage</b></p>
+            <p>57.14%</p>
+            </article>
+          </section>
+        </div>
+          
+        
+        </div>
+      </div>
+  </div>
+
+  
+  <!-- The Contact Section -->
+  
+<!-- End Page Content -->
+</div>
+
+<div class="prediction-area">
+ 
+    <!-- Prediction Form -->
+    <div class='div2'>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <br>
+      <br>
+      <br>
+      
+      <br>
+      <br>
+      <br>
+      
+      <br>
+      <br>   <form action="{{ url_for('pred')}}" method="POST" >
+            <!-- Batting Team Dropdown -->
+            <select class="form-input align-center" name="batting-team">
+                <option value="none">--- Select Team 1 ---</option>
+                <option value="Mumbai Indians">Mumbai Indians</option>
+                <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                <option value="Chennai Super Kings">Chennai Super Kings</option>
+                <option value="Rajasthan Royals">Rajasthan Royals</option>
+                <option value="Kings XI Punjab">Kings XI Punjab</option>
+                <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                <option value="Delhi Capitals">Delhi Capitals</option>
+                <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select><br>
+            <!-- Bowling Team Dropdown -->
+            <select class="form-input align-center" name="bowling-team">
+                <option value="none">--- Select Team 2 ---</option>
+                <option value="Mumbai Indians">Mumbai Indians</option>
+                <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                <option value="Chennai Super Kings">Chennai Super Kings</option>
+                <option value="Rajasthan Royals">Rajasthan Royals</option>
+                <option value="Kings XI Punjab">Kings XI Punjab</option>
+                <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                <option value="Delhi Capitals">Delhi Capitals</option>
+                <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select><br> 
+           
+
+    <input type="submit" class="myButton" value="Predict Toss Winner"><input type="Reset" class="myButton" value="Reset">
+    </form>
+    </div>
+    
+  </div>
+  </div>
+  {{prediction}}
+
+</div>
+<!-- Image of location/map -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Report</a></li>
+          <li><a href="#">Web Chat</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Learn More</h4>
+        <ul>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Referral Program</a></li>
+          <li><a href="#">Site map</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
