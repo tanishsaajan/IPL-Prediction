@@ -9,10 +9,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
-body {font-family: "Lato";
-	
-width:100vw;
-height:auto;}
+body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 .prediction-area{
   display: flex;
@@ -220,14 +217,6 @@ ul{
     <a href="{{ url_for('tt') }}" class="w3-bar-item w3-button w3-padding-large">TOSS WINNER</a>
     <a href="{{ url_for('mm') }}" class="w3-bar-item w3-button w3-padding-large">MATCH WINNER</a>
     
-    <div class="w3-dropdown-hover w3-hide-small">
-       
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
-      </div>
-    </div>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
@@ -235,13 +224,7 @@ ul{
 <br>
 <br>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
+
 
 <!-- Page content -->
 
