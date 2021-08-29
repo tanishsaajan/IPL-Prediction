@@ -10,9 +10,8 @@
 <style>
 body {font-family: "Lato";
 	
-width:100vw;
-height:auto;
-	}
+  width:100vw;
+  height:auto;}
 
 
 
@@ -105,13 +104,13 @@ ul{
 	text-align: center;
 	font-weight: bold;
   color: orange;
-	padding-top: 15px;
+  padding-top: 1px;
 }
 .gg1{
 	text-align: center;
 	font-weight: bold;
   color:green;
-	padding-top: 15px;
+  padding-top: 9px;
 }
 .gif{
         
@@ -172,14 +171,6 @@ ul{
     <a href="{{ url_for('tt') }}" class="w3-bar-item w3-button w3-padding-large">TOSS WINNER</a>
     <a href="{{ url_for('mm') }}" class="w3-bar-item w3-button w3-padding-large">MATCH WINNER</a>
     
-    <div class="w3-dropdown-hover w3-hide-small">
-       
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">Media</a>
-      </div>
-    </div>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
 </div>
@@ -188,20 +179,19 @@ ul{
 <br>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
 
+<br>
+<br>
 <!-- Page content -->
 {% if prediction>0.50%}
-			<h1><center><span class="gg1">Probability Of Team One Winning is : </span> <span class='safe'>{{bat}}</span></center></h1>
+			<h1><center><span class="gg1">
+        
+        <br>Probability Of Team One Winning is : </span> <span class='safe'>{{bat}}</span></center></h1>
                <img class="gif" src="../static/woah.gif" alt="Heart Disease Image">
 
 			{% elif prediction<0.50 %}
-				<h1><center><span class="gg">Probability Of Team Two Winning is :</span> <span class='nsafe'>{{bowl}}</span></center></h1>
+				<h1><center><span class="gg"><br>
+          <br>Probability Of Team Two Winning is :</span> <span class='nsafe'>{{bowl}}</span></center></h1>
 				<img class="gif1" src="../static/bean.gif" alt="No Heart Disease Image">
 			
 			{% endif %}
